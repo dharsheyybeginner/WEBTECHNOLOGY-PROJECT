@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI & ML Department | REC</title>
+
+    <style>
+        body {
+            background-color: #000000; /* Deep Black */
+            color: #ffffff;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #000000;
+            border-bottom: 2px solid #ff0000; /* Bright Red Line */
+            padding: 30px;
+            text-align: center;
+        }
+
+        /* Logo Styling */
+        .dept-logo {
+            width: 250px; /* Adjust size as needed */
+            height: auto;
+            filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.5));
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        /* Frame Styling */
+        .map-frame {
+            border: 2px solid #ff0000;
+            border-radius: 10px;
+            box-shadow: 0 0 20px #ff0000;
+            width: 100%;
+            height: 400px;
+            margin: 20px 0;
+        }
+
+        /* Hotspot Section Styling */
+        .hotspot-box {
+            background-color: #0a0a0a;
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid #ff0000;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        h2 {
+            color: #ff0000;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-left: 5px solid #ff0000;
+            padding-left: 15px;
+            text-align: left;
+        }
+
+        area:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="AIML LOGO(wt).png" alt="AI & ML Department Logo" class="dept-logo">
+        <br>
+        <p style="color: #ff0000; font-weight: bold; letter-spacing: 4px; margin-top: 15px;">
+            RAJALAKSHMI ENGINEERING COLLEGE
+        </p>
+    </header>
+
+    <div class="container">
+        
+        <section>
+            <h2>Campus Location</h2>
+            <p>Locate the AI & ML research block on the interactive frame below:</p>
+            <iframe 
+                class="map-frame"
+                src="http://googleusercontent.com/maps.google.com/4" 
+                allowfullscreen="" loading="lazy">
+            </iframe>
+        </section>
+
+        <section class="hotspot-box">
+            <h2>Interactive Lab Blueprint</h2>
+            <p>Click on the different hardware zones to explore our curriculum:</p>
+
+            
+            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800" 
+                 usemap="#techmap" 
+                 style="width: 100%; border: 1px solid #ff0000; border-radius: 8px;" 
+                 alt="Lab Hardware">
+
+            <map name="techmap">
+                <area shape="circle" coords="200,150,60" alt="Neural Networks" href="https://en.wikipedia.org/wiki/Neural_network" target="_blank">
+                
+                <area shape="rect" coords="450,100,750,350" alt="Robotics Lab" href="https://en.wikipedia.org/wiki/Robotics" target="_blank">
+                
+                <area shape="poly" coords="50,350,150,380,120,480,30,450" alt="Deep Learning" href="https://en.wikipedia.org/wiki/Deep_learning" target="_blank">
+            </map>
+            
+            <p style="font-size: 0.8rem; margin-top: 15px; color: #ff6666;">
+                * Interactive zones: Left (Deep Learning), Center (Neural Nets), Right (Robotics)
+            </p>
+        </section>
+
+    </div>
+
+    <footer style="text-align: center; padding: 50px; color: #444; border-top: 1px solid #1a0000;">
+        <span style="color: #ff0000;">&copy; 2026 Department of AI & ML</span> | Designed for Web Technology Lab
+    </footer>
+
+</body>
+</html>
