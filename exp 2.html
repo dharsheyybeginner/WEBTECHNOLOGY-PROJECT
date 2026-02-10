@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI & ML | Student Registration</title>
+    <style>
+        body { background-color: #000; color: #fff; font-family: sans-serif; text-align: center; }
+        header { padding: 20px; border-bottom: 2px solid #ff0000; }
+        .dept-logo { width: 150px; margin-bottom: 10px; }
+        
+        .form-container { 
+            background: #111; 
+            width: 400px; 
+            margin: 30px auto; 
+            padding: 20px; 
+            border: 1px solid #ff0000;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        label { display: block; margin-top: 15px; color: #ff4d4d; font-weight: bold; }
+        input { 
+            width: 100%; 
+            padding: 10px; 
+            margin-top: 5px; 
+            background: #222; 
+            border: 1px solid #444; 
+            color: #fff; 
+            box-sizing: border-box;
+        }
+
+        .error { color: #ff0000; font-size: 12px; margin-top: 5px; display: none; }
+        
+        button { 
+            width: 100%; 
+            padding: 12px; 
+            margin-top: 25px; 
+            background: #ff0000; 
+            color: #fff; 
+            border: none; 
+            font-weight: bold; 
+            cursor: pointer;
+        }
+        button:hover { background: #b30000; }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="AIML LOGO(wt).png" alt="Logo" class="dept-logo">
+    <h2 style="margin:0;">AI & ML Portal Registration</h2>
+</header>
+
+<div class="form-container">
+    <form id="regForm">
+        <label for="regNum">Registration Number:</label>
+        <input type="text" id="regNum" placeholder="e.g. 211201001">
+        <div id="regError" class="error">This Reg Number is already registered!</div>
+
+        <label for="userName">Full Name:</label>
+        <input type="text" id="userName" placeholder="Enter your name">
+        <div id="nameError" class="error">Name is required.</div>
+
+        <label for="email">College Email:</label>
+        <input type="email" id="email" placeholder="student@rajalakshmi.edu.in">
+        <div id="emailError" class="error">Please enter a valid email address.</div>
+
+        <button type="submit">REGISTER STUDENT</button>
+    </form>
+</div>
+
+<script>
+    // Simulated Database of existing registration numbers
+    const registeredStudents = ["211201001", "211201002", "211201005"];
+
+    document.getElementById('regForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Stop form from submitting/refreshing
+
+        // Reset errors
+        document.querySelectorAll('.error').forEach(e => e.style.display = 'none');
+
+        let isValid = true;
+        
+        // 1. Validate Registration Number Existence
+        const regValue = document.getElementById('regNum').value.trim();
+        if (registeredStudents.includes(regValue)) {
+            document.getElementById('regError').style.display = 'block';
+            isValid = false;
+        }
+
+        // 2. Validate Name (Empty check)
+        const nameValue = document.getElementById('userName').value.trim();
+        if (nameValue === "") {
+            document.getElementById('nameError').style.display = 'block';
+            isValid = false;
+        }
+
+        // 3. Validate Email Format
+        const emailValue = document.getElementById('email').value;
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(emailValue)) {
+            document.getElementById('emailError').style.display = 'block';
+            isValid = false;
+        }
+
+        // Final Success Check
+        if (isValid) {
+            alert("Success! Registration number " + regValue + " has been added to the AI & ML database.");
+            // In a real site, here you would send the data to a server
+        }
+    });
+</script>
+
+</body>
+</html>
