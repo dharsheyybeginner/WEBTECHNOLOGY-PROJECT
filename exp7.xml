@@ -2,69 +2,42 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
+    android:gravity="center"
     android:padding="20dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- First Number -->
-    <EditText
-        android:id="@+id/num1"
-        android:hint="Enter first number"
-        android:inputType="numberDecimal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <!-- Second Number -->
-    <EditText
-        android:id="@+id/num2"
-        android:hint="Enter second number"
-        android:inputType="numberDecimal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <!-- Buttons Row -->
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <Button
-            android:id="@+id/add"
-            android:text="+"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"/>
-
-        <Button
-            android:id="@+id/sub"
-            android:text="-"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"/>
-
-        <Button
-            android:id="@+id/mul"
-            android:text="*"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"/>
-
-        <Button
-            android:id="@+id/div"
-            android:text="/"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
-
-    <!-- Result -->
+    <!-- Text to modify -->
     <TextView
-        android:id="@+id/result"
-        android:text="Result: "
-        android:textSize="20sp"
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
+        android:id="@+id/textView"
+        android:text="Hello Android!"
+        android:textSize="24sp"
+        android:textStyle="normal"
+        android:layout_marginBottom="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!-- Change Color Button -->
+    <Button
+        android:id="@+id/btnColor"
+        android:text="Change Color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!-- Change Font Button -->
+    <Button
+        android:id="@+id/btnFont"
+        android:text="Change Font Size"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!-- Toast Button -->
+    <Button
+        android:id="@+id/btnToast"
+        android:text="Show Toast"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
 </LinearLayout>
